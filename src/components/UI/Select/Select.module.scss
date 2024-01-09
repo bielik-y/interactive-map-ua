@@ -1,0 +1,81 @@
+@import '../../../style/variables';
+@import '../../../style/dropdown';
+@import '../../../style/mixins';
+
+.item {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.box {
+  max-height: 280px;
+}
+
+.icon {
+  fill: $color-gray-3;
+  width: 24px;
+  height: 24px;
+}
+
+.button {
+  cursor: pointer;
+  background-color: white;
+  color: $color-gray-3;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 178%;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 4px;
+
+  span {
+    letter-spacing: -0.02em;
+  }
+
+  &:hover {
+    background-color: $color-light-1;
+  }
+}
+
+.active {
+  background-color: $color-light-2;
+
+  &:hover {
+    background-color: $color-light-2;
+  }
+}
+
+@include smMaxBreakPoint {
+  .button {
+    padding: 8px 14px;
+    font-size: 14px;
+    gap: 4px;
+  }
+  .item {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+@include customMinBreakPoint(1800px) {
+  .item {
+    font-size: 18px;
+  }
+
+  .box {
+    max-height: 300px;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .button {
+    font-size: 22px;
+  }
+}

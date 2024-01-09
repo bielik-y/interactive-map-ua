@@ -1,0 +1,32 @@
+@import '../../style/variables';
+
+.closed {
+  color: $color-error-1;
+  margin: 0 4px 0 8px;
+}
+
+.opened {
+  color: $color-success;
+  margin: 0 4px 0 8px;
+}
+
+.icon {
+  fill: $color-gray-3;
+}
+
+.time {
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}

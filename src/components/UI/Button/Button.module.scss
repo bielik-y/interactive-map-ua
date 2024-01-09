@@ -1,0 +1,112 @@
+@import '../../../style/variables';
+@import '../../../style/mixins';
+
+.button {
+  cursor: pointer;
+  padding: 12px 0;
+  transition: all 200ms;
+}
+
+.sm {
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 143%;
+  border-radius: 4px;
+}
+
+.md {
+  padding: 12px 41px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  border-radius: 8px;
+
+  @include smMaxBreakPoint {
+    font-size: 15px;
+    max-width: 290px;
+  }
+}
+
+.lg {
+  padding: 12px 56px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 182%;
+  border-radius: 12px;
+  letter-spacing: -0.02em;
+
+  @include mdMaxBreakPoint {
+    padding: 12px 24px;
+    font-size: 20px;
+    max-width: 300px;
+  }
+
+  @include smMaxBreakPoint {
+    font-size: 18px;
+    max-width: 290px;
+  }
+}
+
+.yellow {
+  background-color: $color-yellow-1;
+  color:  $color-gray-3;;
+
+  &:hover {
+    background-color: $color-yellow-2;
+  }
+
+  &:active {
+    background-color: $color-yellow-3;
+  }
+}
+
+.blue {
+  background-color: $color-blue-1;
+  color: white;
+
+  &:hover {
+    background-color: $color-blue-2;
+  }
+
+  &:active {
+    background-color: $color-blue-3;
+  }
+}
+
+.dark {
+  color: $color-gray-3;
+  border: 2px solid $color-gray-3;
+  background-color: transparent;
+}
+
+.light {
+  color: white;
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.dark:hover,
+.light:hover {
+  color: white;
+  border: 2px solid $color-blue-1;
+  background-color: $color-blue-1;
+}
+
+.dark:active,
+.light:active {
+  background-color: $color-blue-2;
+}
+
+@include customMinBreakPoint(1800px) {
+  .lg {
+    padding: 12px 70px;
+    font-size: 30px;
+  }
+  .md {
+    font-size: 18px;
+  }
+  .sm {
+    font-size: 16px;
+  }
+}

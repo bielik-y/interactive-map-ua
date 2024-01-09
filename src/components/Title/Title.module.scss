@@ -1,0 +1,74 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 150%;
+  text-align: center;
+}
+
+.light {
+  &.title {
+    color: white;
+  }
+  &.subtitle {
+    color: $color-light-1;
+  }
+}
+
+.dark {
+  &.title {
+    color: $color-gray-3;
+  }
+  &.subtitle {
+    color: $color-gray-2;
+  }
+}
+
+.subtitle {
+  font-weight: 300;
+  word-wrap: break-word;
+  font-size: 22px;
+  line-height: 145%;
+  text-align: center;
+  margin: 16px auto 0 auto;
+  max-width: 800px;
+}
+
+.line {
+  width: 160px;
+  height: 2px;
+  background-color: $color-yellow-1;
+  border-radius: 1px;
+  margin: 24px auto 8px auto;
+}
+
+@include mdMaxBreakPoint {
+  .title {
+    font-size: 36px;
+    line-height: 130%;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@include smMaxBreakPoint {
+  .title {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+@include customMinBreakPoint(1800px) {
+  .title {
+    font-size: 52px;
+  }
+  .subtitle {
+    font-size: 25px;
+  }
+
+}

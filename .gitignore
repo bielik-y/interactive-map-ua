@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# production
+build/
+
+# Webstorm files
+.idea
+
+#VS Code
+.vscode
+
+# Lockfiles
+*.lock

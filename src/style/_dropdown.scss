@@ -1,0 +1,29 @@
+@import './mixins';
+
+.list {
+  position: absolute;
+  margin-top: 6px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 12px rgba(0, 38, 96, 0.06), 
+  0px 8px 40px rgba(0, 53, 136, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.disabled {
+  display: none;
+}
+
+.wrapper {
+  min-width: 280px;
+  overflow: overlay;
+  @include smallScrollBar
+}
+
+.item {
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: $color-light-1;
+  }
+}

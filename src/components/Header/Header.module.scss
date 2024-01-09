@@ -1,0 +1,189 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.header {
+  position: fixed;
+  display: flex;
+  height: $header-height;
+  z-index: 5;
+  width: 100%;
+
+  .transp {
+    background-color: $color-gray-3;
+  }
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0 40px;
+  z-index: 5;
+}
+
+.list {
+  display: flex;
+  gap: 32px;
+}
+
+.href {
+  width: fit-content;
+  height: fit-content;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 144%;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    display: block;
+    margin-top: 4px;
+    background-color: $color-blue-1;
+    transition: all ease-in-out 200ms;
+  }
+
+  &:hover::after {
+    width: 24px;
+  }
+}
+
+.buttonMenu {
+  display: none;
+}
+
+.mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  padding: $header-height 0;
+  box-shadow: 0px 1px 10px rgb(0, 0, 0, 0.3);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+  justify-content: space-between;
+}
+
+.listMobile {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.light {
+  background-color: white;
+
+  ul {
+    a {
+      color: $color-gray-2;
+      &:hover {
+        color: $color-gray-3;
+      }
+    }
+  }
+
+  .active {
+    color: $color-gray-3;
+  }
+
+  .buttonMenu {
+    color: $color-gray-3;
+  }
+}
+
+.transp {
+  background-color: transparent;
+  ul {
+  a {
+    color: $color-gray-1;
+    &:hover {
+      color: white;
+    }
+  }
+}
+  .active {
+    color: white;
+  }
+
+  .buttonMenu {
+    color: white;
+  }
+}
+
+.shadow {
+  background-color: white;
+  box-shadow: 0px 1px 10px rgb(0, 0, 0, 0.3);
+  ul {
+  a {
+    color: $color-gray-2;
+    &:hover {
+      color: $color-gray-3;
+    }
+  }
+}
+
+  .active {
+    color: $color-gray-3;
+  }
+
+  .buttonMenu {
+    color: $color-gray-3;
+  }
+}
+
+@include mdMaxBreakPoint {
+  .logo {
+    display: flex;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .buttonMenu {
+    cursor: pointer;
+    z-index: 5;
+    display: block;
+    margin-right: 40px;
+    background-color: transparent;
+  }
+}
+
+@include smMaxBreakPoint {
+  .link {
+    font-size: 16px;
+  }
+}
+
+@include customMinBreakPoint(1800px) {
+  .header {
+    height: $header-height-lg;
+  }
+  .link {
+    font-size: 22px;
+    &:after {
+      height: 3px;
+    }
+    &:hover::after {
+      width: 30px;
+    }
+  }
+}

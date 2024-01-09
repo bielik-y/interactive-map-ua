@@ -1,0 +1,100 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.main {
+  position: relative;
+  max-width: 650px;
+  padding-top: 120px;
+  padding-bottom: 174px;
+
+  @include lgMaxBreakPoint {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.word {
+  div {
+    color: $color-yellow-1;
+  }
+}
+
+.title {
+  margin-bottom: 24px;
+  color: white;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 120%;
+}
+
+.subtitle {
+  color: white;
+  max-width: 520px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 150%;
+  margin-bottom: 40px;
+}
+
+@include customMaxBreakPoint(730px) {
+  h1 {
+    max-width: 400px;
+  }
+}
+
+@include mdMaxBreakPoint {
+  .title {
+    font-size: 58px;
+  }
+  .subtitle {
+    font-size: 22px;
+  }
+}
+
+@include smMaxBreakPoint {
+  .title {
+    font-size: 52px;
+  }
+  .subtitle {
+    font-size: 22px;
+    line-height: 160%;
+  }
+}
+
+@include customMaxBreakPoint(360px) {
+  .title {
+    font-size: 46px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+@include customMinBreakPoint(1800px) {
+  .main {
+    max-width: 800px;
+  }
+  .title {
+    font-size: 74px;
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+}
+
+@include customMinBreakPoint(2100px) {
+  .main {
+    max-width: 980px;
+  }
+  .title {
+    font-size: 100px;
+  }
+  .subtitle {
+    max-width: 580px;
+    font-size: 28px;
+  }
+}
+

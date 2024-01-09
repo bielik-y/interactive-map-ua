@@ -1,0 +1,17 @@
+.header-enter {
+  background-color: transparent;
+}
+
+.header-enter-active {
+  background-color: white;
+  transition: background-color 600ms;
+}
+
+.header-exit {
+  background-color: white;
+}
+
+.header-exit-active {
+  background-color: transparent;
+  transition: background-color 600ms;
+}

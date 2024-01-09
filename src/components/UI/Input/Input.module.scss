@@ -1,0 +1,105 @@
+@import '../../../style/variables';
+@import '../../../style/mixins';
+
+.container {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  transition: border ease 200ms;
+  border: 1px solid $color-gray-1;
+  &:focus-within {
+    border: 1px solid $color-blue-1;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 156%;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    &::placeholder {
+      color: $color-gray-2;
+    }
+  }
+}
+
+.label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 156%;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+  color: $color-gray-3;
+}
+
+.error {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 133%;
+  letter-spacing: 0.01em;
+  color: $color-error-1;
+}
+
+.icon {
+  margin-right: 12px;
+  fill: $color-gray-3;
+}
+
+.active {
+  margin-right: 12px;
+  fill: $color-blue-2;
+}
+
+.button {
+  @include flexCentering;
+}
+
+.digits {
+  width: fit-content;
+  padding: 12px 0 12px 12px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 156%;
+}
+
+.phone {
+  width: 100%;
+  @include flexCentering;
+  input {
+    padding: 12px 12px 12px 8px;
+  }
+}
+
+.code {
+  input {
+    margin: 4px;
+    outline: none;
+    border: 1px solid $color-light-3;
+    text-align: center;
+    height: 60px;
+    width: 50px;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 156%;
+    border-radius: 4px;
+  }
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 40px white inset !important;
+  -webkit-box-shadow: 0 0 0 40px white inset !important;
+}

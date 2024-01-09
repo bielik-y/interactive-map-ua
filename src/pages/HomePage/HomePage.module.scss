@@ -1,0 +1,119 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins';
+
+.main {
+  position: relative;
+  padding-top: $header-height;
+  background-color: $color-gray-3;
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+
+.places {
+  content: url('../../assets/images/places-lg.jpg');
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: 1150px;
+}
+
+.points {
+  content: url('../../assets/images/points.png');
+  position: absolute;
+  right: 170px;
+  bottom: 120px;
+  width: 512px;
+  height: 350px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 80px 0;
+  min-height: 100%;
+
+  @include heightMinBreakPoint(995px) {
+    padding: 140px 0;
+    min-height: fit-content;
+  }
+}
+
+.href {
+  width: fit-content;
+  height: fit-content;
+}
+
+.cards {
+  margin: 56px auto 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.help {
+  background-size: cover;
+  padding: 138px 0 160px 0;
+}
+
+.buttons {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tips {
+  background-color: white;
+  padding: 80px 0;
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  margin-top: 40px;
+}
+
+@include xlMaxBreakPoint {
+  .points {
+    display: none;
+  }
+}
+
+@media (max-width: $medium) {
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1440px) {
+  .сards {
+    max-width: 508px;
+  }
+}
+
+@include customMinBreakPoint(1800px) {
+  .places {
+    content: url('../../assets/images/places-points.jpg');
+    height: 100%;
+    width: auto;
+  }
+  .points {
+    display: none;
+  }
+}

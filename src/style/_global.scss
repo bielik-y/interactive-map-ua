@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+  font-family: $main-font;
+  letter-spacing: 0.02em;
+}
+
+body {
+  overflow: overlay;
+  color: $color-gray-3;
+}
+
+a {
+  display: block;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1140px;
+
+  @include customMinBreakPoint(1800px) {
+    width: 1400px;
+  }
+
+  @include customMinBreakPoint(2100px) {
+    width: 1650px;
+  }
+
+  @include xxlMaxBreakPoint {
+    margin: 0 auto;
+    width: 1040px;
+  }
+
+  @include xlMaxBreakPoint {
+    width: 864px;
+  }
+
+  @include lgMaxBreakPoint {
+    padding: 0 55px;
+    width: 100%;
+  }
+
+  @include mdMaxBreakPoint {
+    padding: 0 20px;
+  }
+
+  @include smMaxBreakPoint {
+    padding: 0 22px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(154, 154, 154);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,51 @@
+@import '../../../style/variables';
+@import '../../../style/mixins';
+
+$lightMark: url('../../../assets/icons/ic_mark_light.svg');
+$darkMark: url('../../../assets/icons/ic_mark_dark.svg');
+
+.checkbox {
+  input {
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+
+    &:checked {
+      & + label::before {
+        content: $lightMark;
+        background-color: $color-blue-1;
+        border: 1px solid $color-blue-1;
+        @include flexCentering;
+      }
+      &:hover {
+        & + label::before {
+          content: $lightMark;
+        }
+      }
+    }
+
+    &:hover {
+      & + label::before {
+        content: $darkMark;
+        @include flexCentering;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 1px solid $color-gray-1;
+      background-color: white;
+      border-radius: 2px;
+    }
+  }
+}

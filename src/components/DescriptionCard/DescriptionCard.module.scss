@@ -1,0 +1,50 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.card {
+  width: 242px;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 16px 16px 40px 16px;
+  box-shadow: 0px 8px 12px rgba(0, 38, 96, 0.06), 0px 8px 40px rgba(0, 53, 136, 0.15);
+}
+
+.img {
+  width: 64px;
+  height: 64px;
+}
+
+.title {
+  margin: 32px 0 16px 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 156%;
+  color: $color-gray-3;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  color: $color-gray-2;
+}
+
+@include customMinBreakPoint(1800px) {
+  .card {
+    padding: 18px 18px 44px 18px;
+    width: 280px;
+  }
+
+  .img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}

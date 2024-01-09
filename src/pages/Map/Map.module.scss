@@ -1,0 +1,107 @@
+@import '../../style/variables';
+@import '../../style/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: $header-height;
+  width: 100%;
+  height: 100%;
+
+  img {
+    margin: auto;
+  }
+}
+
+.params {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px 14px 40px;
+  z-index: 4;
+  box-shadow: 0px 4px 12px rgba(0, 38, 96, 0.02), 0px 4px 40px rgba(0, 53, 136, 0.1);
+}
+
+.span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  margin-right: 4px;
+  color: $color-gray-3;
+}
+
+.region {
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  padding-right: 8px;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.list {
+  z-index: 2;
+  overflow: overlay;
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 0 448px;
+  box-shadow: 0px 8px 12px rgba(0, 38, 96, 0.06), 0px 8px 40px rgba(0, 53, 136, 0.15);
+  @include smallScrollBar;
+  @include customMaxBreakPoint(896px) {
+    display: none;
+  }
+}
+
+@include customMaxBreakPoint(1160px) {
+  .buttons {
+    display: none;
+  }
+}
+
+@include mdMaxBreakPoint {
+  .span {
+    display: none;
+  }
+}
+
+@include customMaxBreakPoint(375px) {
+  .params {
+    padding: 14px 15px;
+  }
+}
+
+@include customMaxBreakPoint(340px) {
+  .params {
+    padding: 14px 10px;
+  }
+}
+
+@include customMinBreakPoint(1800px) {
+  .wrapper {
+    padding-top: $header-height-lg;
+  }
+  .span {
+    font-size: 18px;
+  }
+  .params {
+    padding: 16px 40px;
+  }
+}

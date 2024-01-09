@@ -1,0 +1,51 @@
+@import '../../style/mixins';
+@import '../../style/variables';
+
+.form {
+  width: 434px;
+  @include flexCentering;
+  flex-direction: column;
+
+  h1 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 164%;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+    margin-top: 16px;
+  }
+}
+
+.info {
+  padding: 14px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 134%;
+  border-radius: 4px;
+  width: 100%;
+  color: $color-gray-2;
+  background-color: $color-light-2;
+}
+
+.help {
+  cursor: pointer;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 156%;
+  color: $color-blue-2;
+  transition: color ease 300ms;
+
+  &:hover {
+    color: $color-blue-3;
+  }
+}

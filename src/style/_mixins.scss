@@ -1,0 +1,79 @@
+@import './variables';
+
+// Default values should be for xxl+ (1600+) screen
+
+@mixin smMaxBreakPoint {
+  @media (max-width: $screen-sm) {
+    // > 480px
+    @content;
+  }
+}
+
+@mixin mdMaxBreakPoint {
+  @media (max-width: $screen-md) {
+    // > 768
+    @content;
+  }
+}
+
+@mixin lgMaxBreakPoint {
+  @media (max-width: $screen-lg) {
+    // > 1024
+    @content;
+  }
+}
+
+@mixin xlMaxBreakPoint {
+  @media (max-width: $screen-xl) {
+    //  > 1200
+    @content;
+  }
+}
+
+@mixin xxlMaxBreakPoint {
+  @media (max-width: $screen-xxl) {
+    // > 1600
+    @content;
+  }
+}
+
+@mixin customMinBreakPoint($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin customMaxBreakPoint($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin heightMinBreakPoint($size) {
+  @media (min-height: $size) {
+    @content;
+  }
+}
+
+@mixin smallScrollBar {
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 14px 14px rgb(221, 220, 229);
+    border: solid 3px transparent;
+    background: transparent;
+    border-radius: 10px;
+  }
+}
+
+@mixin flexCentering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

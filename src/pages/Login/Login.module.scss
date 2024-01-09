@@ -1,0 +1,17 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.link {
+  margin-top: 16px;
+}
