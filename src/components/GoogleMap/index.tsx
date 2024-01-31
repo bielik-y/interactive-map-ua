@@ -8,7 +8,7 @@ import markerIcon from '../../assets/icons/ic_marker.svg'
 import markerHoverIcon from '../../assets/icons/ic_marker_hover.svg'
 import Spinner from '../UI/Spinner'
 
-// const MAP_RESTRICTION_BOUNDS = { north: 52.72, south: 44, west: 22.05, east: 40.25 }
+// const MAP_RESTRICTION_BOUNDS_UA = { north: 52.72, south: 44, west: 22.05, east: 40.25 }
 const MAP_CENTER = { lat: 48.84421678574725, lng: 31.253911335235795 }
 const MIN_ZOOM = 6
 const MAX_ZOOM = 19
@@ -32,8 +32,8 @@ const mapOptions = {
   clickableIcons: false,
   maxZoom: MAX_ZOOM,
   minZoom: MIN_ZOOM,
-  // setting restriction will cause non smooth animations and clustering issues
-  // restriction: { latLngBounds: MAP_RESTRICTION_BOUNDS },
+  // Setting the restriction will cause non smooth animations and clustering library issues
+  // restriction: { latLngBounds: MAP_RESTRICTION_BOUNDS_UA },
 }
 
 const GoogleMap = ({ locations, selectedId, onMarkerClick }: GoogleMapProps) => {
@@ -80,7 +80,7 @@ const GoogleMap = ({ locations, selectedId, onMarkerClick }: GoogleMapProps) => 
         markers: points,
         map: map,
         renderer: renderer,
-        // default onClusterClick function acting incorrectly with set map restriction
+        // Default onClusterClick function acts incorrectly with set map restriction
         onClusterClick: (_, cluster, map) => handleClusterClick(cluster, map),
       })
 
@@ -143,8 +143,8 @@ const GoogleMap = ({ locations, selectedId, onMarkerClick }: GoogleMapProps) => 
   }, [])
 
   const panToMarker = (position: google.maps.LatLng, map: google.maps.Map, selected?: boolean) => {
-    // smooth zoom available only if zoom difference <= 4
-    // smooth and panTo executed at the same time are not smooth
+   // A smooth zoom available only if zoom difference <= 4
+   // setZoom() and panTo() executed at the same time are not smooth so timeout is used
     map.panTo(position)
     const zoom = map.getZoom()
     if (selected)
@@ -161,7 +161,7 @@ const GoogleMap = ({ locations, selectedId, onMarkerClick }: GoogleMapProps) => 
       }, 100)
   }
 
-  const initializeMap = useMemo(() => {
+  const initializedMap = useMemo(() => {
     return (
       <GoogleMapReact
         mapContainerClassName={styles.map}
@@ -173,7 +173,8 @@ const GoogleMap = ({ locations, selectedId, onMarkerClick }: GoogleMapProps) => 
     )
   }, [onLoad])
 
-  return !isLoaded ? <Spinner /> : initializeMap
+  return !isLoaded ? <Spinner /> : initializedMap
 }
 
 export default GoogleMap
+  
